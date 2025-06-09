@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    height: 100vh ;/*OCUPA EL 100% DE LA ALTURA DE LA VENTANA*/
+    display: grid;
+    grid-template-columns: 1fr; /*UNA SOLA COLUMNA*/
+    grid-template-rows: 10% 15% 65% 10%;
+    grid-template-areas: 
+        "zh" /*HEADER*/
+        "zn" /*NAZ*/
+        "zm" /*MAIN*/
+        "zf" /*FOOTER*/
+        ;
+}
+header{
+    grid-area: zh;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    display: flex; /*PARA LA DISTRIBUCIÓN INTERNA*/
+    justify-content: space-between; /*ESPACIO ENTRE ELEMENTOS*/
+    text-align: center;
+}
+
+#logo{
+    display: flex;
+    align-items: center; /*CNTRAR VERTICALMENTE*/
+}
+
+#titulo{
+    margin-right: 50px; /*MARGEN DERECHO PARA LA SEPARACIÓN*/
+    display: flex;
+    align-items: center; /*CENTRAR VERTICALMENTE*/
+}
+
+/*IMAGEN DEL LOGO*/
+
+header>div>img{
+    max-height: 80px; /*TAMAÑO MÁXIMO*/
+    padding: 10px; /*ESPACIO INTERNO*/
+    margin-left: 10px; /*MARGEN IZQUIERDO*/ 
+}
+
+nav{
+    grid-area: zn; /*AREA DEL GRID PARA nav*/
+    background-color: rgb(194, 95, 95);
+    color:rgb(255, 255, 255);
+    display: flex; 
+    align-content: center; 
+    justify-content: space-between;
+    padding: 10px; /*ESPACIO INTERNO*/
+}
+
+nav>div{
+    font-size: 20px;
+}
+
+nav>div:hover{
+    color:beige; /*CAMBIA DE COLOR AL ESTAR EL CURSOR ENCIMA*/
+}
