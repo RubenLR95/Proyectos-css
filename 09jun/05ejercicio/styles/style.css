@@ -1,0 +1,64 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+
+
+
+
+body{
+    
+    height: 100vh; 
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    grid-template-rows: 50px 1fr 50px;
+    grid-template-areas: 
+    "zheader zheader"
+    "znav zmain"
+    "zfooter zfooter"
+    ;
+}
+
+ul{
+    list-style: none;
+}
+
+
+
+header{
+    grid-area: zheader;
+    background-color: rgb(58, 82, 49);
+    color: rgb(246, 223, 153);
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+
+}
+nav{
+    grid-area: znav;
+    background-color:rgb(78, 142, 199) ;
+    color:rgb(254, 232, 168);
+}
+main{
+    grid-area: zmain;
+    background-color:rgb(255, 181, 124) ;
+    color:rgb(254, 227, 148);
+    padding: top 20px;
+    text-align: center;
+}
+footer{
+    
+    grid-area: zfooter;
+    background-color:rgb(131, 70, 27);
+    color:rgb(253, 227, 151);
+    text-align: center;
+    padding-right: 10px;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
