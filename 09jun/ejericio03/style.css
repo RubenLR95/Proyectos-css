@@ -1,0 +1,34 @@
+body{
+    height: 100vh; /*INDICAMOS AL BODY QUE OCUPE EL 100% DE LA VENTANA DEL NAVEGADOR*/
+    display: grid; /*DIVIDIR EL BODY E CELDAS (columnas y filas)*/
+    grid-template-columns: 25% 1fr; /*DEFINIR CUANTAS COLUMNS Y SU ANCHO. APLICANDO 1fr - TAMAÑO RESTANTE. EN ESTE CASO INDICAMOS QUE LA PRIMERA COLUMNA OCUPA UN 25% DE LA PÁGINA, VICUALMENTOE, EL PRIMER CUARTO DESDE LA IZQUIERDA*/
+    grid-template-rows: 50px 1fr 50px; /*DEFINIR CUANTAS FILAS Y SU ALTO. EN ESTE CASO DE INDICA QUE header OCUPA 50PIXELES, EL main OCUPA 1fr, Y EL footer OCUPA 50PIXELES*/
+    grid-template-areas:   /*DAMOS UN NOMBRE A LAS CELDAS POR FILAS*/
+    "zheader zheader"
+    "znav zmain"
+    "zfooter zfooter";
+    
+}
+/*ÚLTIMO PASO. ASIGNAMOS CADA AREA DE LA WEB ACADA ZOMA*/
+header{
+    grid-area: zheader; /*LE ASIGNAMOS SU CELDA*/
+    background-color: rgb(96, 79, 111);
+    color: rgb(255, 225, 142);
+}
+nav{
+    grid-area: znav; 
+    background-color:rgb(89, 70, 106) ;
+    color: rgb(255, 225, 142)
+}
+
+main{
+    grid-area: zmain;
+    background-color:rgb(72, 51, 91) ;
+    color: rgb(255, 225, 142)
+}
+
+footer{
+    grid-area: zfooter;
+    background-color: rgb(59, 42, 74);
+    color:rgb(255, 225, 142)
+}
