@@ -1,0 +1,66 @@
+body{
+    background-color: rgb(92, 193, 159);
+    margin: 0; /*Elimina los márgenes por defecto */
+    font-family:fantasy
+
+}
+header{
+    background-color: rgb(55, 108, 90);
+    color:aliceblue;
+    padding: 1rem;
+    text-align:center
+}
+
+footer{
+    background-color:rgb(55, 108, 90) ;
+    color: aliceblue;
+    padding: 0.5rem;
+    text-align:center;
+    font-size: 0.9rem;
+}
+
+h1{
+    font-size:  2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+h2{
+    font-size: 1.8rem;
+    color: aliceblue;
+    margin-top: 1.5rem;
+}
+
+p{
+    line-height: 1.6; /* MEJORA LA LEGIBILIDAD, PARA TEXTOS LARGOS.
+                    1 - muy apretado
+                    1.2 - muy apretado
+                    1.5 / 1.6 - 
+                    2 - muy espaciado*/
+    color: aliceblue;
+    margin-bottom: 1 rem;
+}
+
+.destacado{   /*  PONIENTO EL UNTO DELANTE DEL NOMBRE 
+                  INDICAMOS QUE NOS REFERIMOS A UNA CLASE 
+                  YA ESISTENTE EN EL HTML*/
+    background-color: rgb(129, 102, 52);
+    padding: 0,5rem;
+    border-left: 4px solid rgb(210, 147, 29) /*AÑADE UN BORDE. EN EL LADO QUE QUERAMOS Y DEL COLOR QUE QUERAMOS*/
+
+}
+
+/* 1rem -> TAMAÑO DE LA FUENTE HTML 16px
+    
+    1rem = 16px
+    0.5 = 8px
+    2rem = 32px
+    
+    1. ACCESIBILIDAD = LOS VALORES EN FORMATO rem HACE QUE SE AJUSTEN ATOMÁTICAAMENTE A CADA DISPOSITIVO
+    2. CONSISTENCIA = PERMITE MANTENER PROPORCIONES COHERENTES.
+    3. ESCALABILIDAD = PUEDES CAMBIAR LA ESCALA A LA WEB
+    
+    */
+
+
+
+
