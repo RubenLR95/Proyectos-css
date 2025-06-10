@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box; /*HACE QUE width Y height INCLUYAN PADDIING Y BORDER*/
+    margin: 0;
+    padding: 0;
+
+
+}
+
+.gallery img{
+    width: 100%; /*LA IMAGEN OCUPA EL 100% DEL ANCHO DEL CONTENEDOR*/
+    max-width: 350px; /*NUNCA SERÁ MAS ANCHA DE 350PX*/
+    height: 300px; /*ALTURA FIJA*/
+    object-fit: cover; /*ESCALA Y RECORTA LA IMAGEN PARA CUBRIR TODO EL CONTENEDOR SIN DEFORMARLA*/
+    border-radius: 10px; /*BORDES REDONDEADOS*/
+}
+
+body{  /*AFECTA A TODO LO QUE ESTÁ DENTRO DEL BODY A NO SER QUE ELEMENTO POR ELEMENTO SE PERSONALICE*/
+    font-family: sans-serif;
+    background-color: rgb(163, 186, 163);
+}
+
+
+.header{
+    text-transform: uppercase; /*CONVIERTE EL TEXTO EN MAYUSCULAS*/
+    padding: 35px; /*RELLENO INTERNO DE 35px EN CADA LADO*/
+    background-color: rgb(88, 116, 88);
+    color:rgb(186, 75, 75);
+    border-bottom: 4px solid #fdb347;/*LINEA INFERIOR DE 4 PX NARANJA*/
+    text-align: center; 
+}
+
+.gallery{
+    display: flex; /*CONVIERTE .gallery EN CONTENDOR FLEX. PARA PODER MODIFICARLO*/
+    flex-direction: row; /*ALINEA LOS ITEMS EN FILA HORIZONTAL*/
+    flex-wrap: wrap; /*PERMITE QUE LOS ITEMS SALTEN A LA SIGUIENTE LINEA*/
+    justify-content: center; /*CENTRA LAS IMÁGENES HORIZONTALMENTE*/
+    align-items: center; /*CENTRA LAS IMÁGENES VERTICALMENTE DENTRO DE CADA FILA*/
+    padding: 20px 10px; /*RELLENO SUPERIOR DE 20PX, LATERALMENTE 10PX*/
+    max-width: 1400px; /*ANCHO MAXIMO DEL CONTENEDOR 1400PX*/
+    margin: 0 auto; /*CENTRA .gallery EN LA PAGINA AUTOMÁTICAMENTE*/
+    gap: 16px; /*ESPACIO DE 16PX ENTRE CADA IMAGEN*/
+}
+
+.gallery::after{
+    content: ""; /*CREA UN PSEUDO-ELEMENTO VACÍO AL FINAL*/
+    width: 350px; /*ANCHO IGUAL A max-width DE .gallery ing PARA RELLLENAR LA ULTIMA FILA*/
+    
+}
