@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*border-box PARA QUE LAS CAJAS OCUPEN EL width REAL SIN AUMENTO. NO ESPECIFICAR ALTO NI ANCHO*/
+
+}
+
+body{
+    background-color: rgb(212, 177, 244);
+    color: rgb(118, 72, 12)
+}
+
+a{
+    text-decoration: none;
+}
+
+.nav-principal{
+    display: flex;
+    background-color: bisque;
+    padding: 0.75rem 1.5rem;
+    align-items: center;
+}
+
+.nav-principal a {
+    color:rgb(118, 72, 12);
+    font-weight: bold; /*LA LETRA SALE NE NEGRITA*/
+    margin-right: 1.5rem;
+
+}
+
+.nav-principal a:last-child{
+    margin-right: 0;
+}
+
+.nav-principal{
+    display: flex;
+    justify-content: space-between;
+}
+
+.contenedor-principal{
+    display: flex;
+    margin: 1rem auto;
+    max-width: 1200px;
+
+}
+
+.columna-main{
+    flex: 3; /*OCUPA 3 FRACCIONES*/
+    background-color: aliceblue;
+    padding: 1.5 rem;
+    margin-right: 1rem;
+}
+
+.columna-sidebar{
+    flex: 1;
+    background-color: blanchedalmond;
+    padding: 1rem;
+
+}
+
+.columna-main{
+    flex-grow:3; /*PERMITE QUE LA COLUMNA PRINCIPAL CREZCA 3 VECES MAS*/
+    flex-shrink: 1;/*PERMITE QUE LA COLUMNA PRINCIPAL DE ENCOJA SI ES NECESARIO*/
+    flex-basis: 0; /*TAMAÑO INICIAL DE LA COLUMNA ANTES DE CRECER*/
+}
+
