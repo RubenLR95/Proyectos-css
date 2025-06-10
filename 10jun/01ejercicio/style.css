@@ -1,0 +1,34 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    padding: 20px;
+    background-color: rgb(176, 218, 255);
+
+}
+/*CUANDO USAMOS background-color ESTO ES EL COLOR DEL FONDO
+                background       TAMBIEN ES EL COLOR DE FONDO
+                LA DIFERENCIA ES QUE background TE DA OPCION A MODIFICACIONES DEL RESTO DE ELEMENTOS*/
+h1{
+    margin-bottom: 20px;
+}
+
+.caja{
+    width: 300px;
+    padding: 20px;
+    border: 10px solid;
+    margin-bottom: 20px;
+}
+
+.content-box{
+    box-sizing: content-box;
+    border-color: rgb(94, 145, 18);
+}
+
+.border-box{
+    box-sizing: border-box;
+    border-color: #c0392b;
+}
+
