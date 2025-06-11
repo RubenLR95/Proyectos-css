@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*HACE QUE EL ANCHO Y EL ANCHO INCLUYA padding Y border*/
+}
+
+/* LOYAUT POR GRID */
+body{
+    min-height: 100vh; /*LA ALTURA MÍNIMA DEL ALTO DE LA VENTANA*/
+    display: grid; /*CONVIERTE EL body EN UN CONTENEDOR grid*/
+    grid-template-columns: 15% 1fr; /*DEFINE body EN DOS COLUMNAS, UNA AL 15% Y OTRA DE 1FR*/
+    grid-template-rows: 60px 1fr 30px; /*DEFINA 3 FILAS */
+    grid-template-areas: 
+    "header header"
+    "nav gallery"
+    "footer footer";
+
+    background: #2f1010;
+    font-family: sans-serif;
+    color: aliceblue;
+}   
+
+header{
+    grid-area: header;
+    background: #550707;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    font-size: 1.8rem;
+    color:#be7777;
+}
+
+nav{
+    grid-area: nav;
+    max-width: 100%; /*NO EXCEDER EL ANCHO DE SU CONTENEDOR PADRE*/
+    background: #531e1e;
+    padding: 1rem; /*RELLENO INTERNO*/
+    overflow-wrap: break-word; /*PERMITE QUE EL TEXRO SE DIVIDA SI ES MUY LARGO*/
+    overflow:hidden;
+}
+
+nav ul{
+    list-style: none; /*ELIMINA LOS PUNTOS DE LOS ELEMENTOS DE LA LISTA*/
+}
+
+nav li + li{
+
+    margin-top: 1rem; /*AÑADE ESPACIO SUPERIOR A CADA <li> EXCEPTO EL PRIMERO*/
+
+}
+
+.nav-button{   /*LE DAMOS FORMA A LOS button (BOTONES)*/
+    display: inline-block; /*PARA PODER APLICAR padding Y border*/
+    padding: 0.5rem 1rem; /*RELLENO INTERNO (ARRIBA/ABAJO, IZQUIERDA/DERECHA)*/
+    background:#513131;
+    color:#be7777;
+    text-decoration: none;  /*SIN SUBRAYADO EN LOS ENLACES*/
+    border-radius: 0.3rem; /*BORDES REDONDEADOS*/
+    transition: background 0.2s; /*TRANSICION DEL FONDO AL PASAR EL CURSOR SOBRE ELLOS*/
+    transition: color 0.2;
+    box-sizing: border-box;
+}
+
+.nav-button:hover{
+    color:#550707;
+    background: #be7777;
+}
+
+main{
+    grid-area: gallery;
+    padding: 2rem;  /*AJUSTA A TU GUSTO*/
+}
+
+.gallery{
+    display: grid; /*CONTENEDOR GRID PARA LAS MINIATURAS*/
+    gap: 2rem; /*ESPACIO DE 2rem ENTRE FILAS Y COLUMNAS*/
+    grid-auto-rows: auto; /*ALTURA FIJA DE 300px PARA CADA FILA*/
+    justify-content: center; /*CENTRA EL GRID HORIZONTALMENTE*/
+}
+
+/* MINIATURAS */
+
+.thumb{
+    width: 100%; /*ANCHO AL 100% DEL CONTENEDOR DEL GRID*/
+    height: 100%; /* ALTO AL 100% (300px) DEL CONTENEDOR GRID */
+    overflow: hidden; /* OCULTA LO QUE DESBORDE SU CONTENEDOR */
+    border: 1px solid #6b4242;
+    border-radius: 0.5rem;
+    transition:
+        border-radius 0.4s ease, /*ANIMACION DE CAMBIO DE RADIO*/
+        transform 0.3s ease, /*ANIMACION DEL ESCALADO*/
+        box-shadow 0.4s ease; /*ANIMACION DE LA SOMBRA*/
+
+}
+
+/* AL PASAR EL RATÓN */
+
+.thumb:hover{
+    border-radius: 1rem; /*AUMENTAR EL REDONDEO AL PASAR EL RATON*/
+    transform: scale (1.05); /* ESCALA UN 5% PARA EFECTO DE ZOOM */
+    box-shadow: 0 0 15px #6b4242; /* SOMBRA TENUE EN EL COLOR DESEADO*/
+}
+
+/* IMAGEN DENTRO DE LA MINIATURA */
+
+.thumb img{
+    display: block; /*ELIMINA EL ESPACIO DE LINEA*/
+    width: 100%; /*ANCHO COMPLETO DEL CONTENEDOR .thumb*/
+    height: 100%; /*ALTO COMPLETO DEL CONTENEDOR .thumb*/
+    object-fit: contain; /*ESCALA LA IMAGEN PARA VERLA ENTERA*/
+    object-position: center; /* CENTRA LA IMAGEN DENTRO DEL CONTENEDOR ESCALABLE*/
+}
+
+.portada img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* PARA QUE LA IMAGEN CUBRA TODO EL CONTEDOR SI ES NECESARIO */
+   
+}
+
+footer{
+    grid-area: footer;
+    background:#550707;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0.1rem;
+    font-size: 0.9rem;
+}
+
+/*CENTRAR LA IMAGEN DE LA PORTADA*/
+
+.gallery-portada{
+    display: flex; /*PARA CENTRARLO FACILMENTE*/
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+}
+
+.gallery-portada img {
+   
+    max-width: 90%; /* o el máximo deseado */
+    height: auto;
+    border-radius: 10px;
+}
+
+/* MEDIA QUERIES PARA RESONSIVE */
+
+/*PANTALLA HASTA 600PX*/
+
+@media (max-width: 600px){
+    body{
+        grid-template-columns: 1fr;
+        grid-template-rows: 60px auto 1fr 30px;
+        grid-template-areas: 
+            "header"
+            "nav"
+            "gallery"
+            "footer";
+    }
+
+    nav ul {
+        list-style: none; /*SIN VERIFICAR*/
+        padding: 0; /*SIN RELLENO*/
+        margin: 0; /*SIN MARGENES*/
+        display: flex; /*FLEX HORIZONTAL*/
+        justify-content: center; /*CENTRAR BOTONES HORIZONTALMENTE*/
+        gap: 1rem; /*ESPACIO ENTRE BOTONES*/
+        flex-wrap: wrap; /*PERMITE SALTO DE li*/
+    }
+
+    nav li + li{
+        margin-top: 0; /*QUITA EL ESPACIO SUPERIOR (AHORA SON FLEX)*/
+    }
+
+    .gallery{
+        justify-content: center; /*CENTRAR LA GALERIA*/
+        grid-template-columns: 1fr; /*UNA SOLA COLUMNA DE 1fr*/
+
+    }
+}
+
+/*PARA PANTALLAS DE 601px Y 900px*/
+
+@media (min-width: 601px) and (max-width: 900px){
+    .gallery{
+        grid-template-columns: repeat(2,1fr);  /*CREAMOS 2 COLUMNAS DEL MISMO TAMAÑO*/
+
+    }
+    .nav-button{
+        padding: 0.1rem 0.3rem; /*MENOS PADDING PARA AJUSTAR BOTONES*/
+        font-size: 0.9rem; /*LIGERAMENTE MAS PEQUEÑO*/
+    }
+}
+
+/*PARA PANTALLAS DE 901 A 1400PX*/
+
+@media (min-width: 901px) and (max-width: 1400px){
+    .gallery{
+        grid-template-columns: repeat(3,1fr);  /*CREAMOS 2 COLUMNAS DEL MISMO TAMAÑO*/
+
+    }
+    .nav-button{
+        padding: 0.1rem 0.3rem; /*MENOS PADDING PARA AJUSTAR BOTONES*/
+        font-size: 0.9rem; /*LIGERAMENTE MAS PEQUEÑO*/
+    }
+}
+
+
+/*PARA PANTALLAS DE MAS DE 1401PX*/
+
+@media (min-width: 1401px){
+    .gallery{
+        grid-template-columns: repeat(4,1fr);  /*CREAMOS 2 COLUMNAS DEL MISMO TAMAÑO*/
+
+    }
+    .nav-button{
+        padding: 0.1rem 0.3rem; /*MENOS PADDING PARA AJUSTAR BOTONES*/
+        font-size: 0.9rem; /*LIGERAMENTE MAS PEQUEÑO*/
+    }
+}
