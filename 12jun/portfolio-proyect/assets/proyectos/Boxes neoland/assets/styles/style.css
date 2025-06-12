@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh; /*OCUPA EL 100% DE LA ALTURA DE LA VENTANA*/
+  display: grid;
+  grid-template-columns: 1fr; /*UNA SOLA COLUMNA*/
+  grid-template-rows: 100px 50px 1fr 50px;
+  grid-template-areas:
+    "zh" /*HEADER*/
+    "zn" /*NAZ*/
+    "zm" /*MAIN*/
+    "zf" /*FOOTER*/;
+}
+header {
+  grid-area: zh;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  display: flex; /*PARA LA DISTRIBUCIÓN INTERNA*/
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+#logo {
+
+  display: flex;
+  align-items: center; /*CNTRAR VERTICALMENTE*/
+}
+
+#titulo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+/*IMAGEN DEL LOGO*/
+
+header > div > img {
+  max-height: 80px; /*TAMAÑO MÁXIMO*/
+  padding: 10px; /*ESPACIO INTERNO*/
+  margin-left: 10px; /*MARGEN IZQUIERDO*/
+}
+
+nav {
+  grid-area: zn; /*AREA DEL GRID PARA nav*/
+  background-color: rgb(194, 95, 95);
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center; /*align-items CUANDO ESTÁN TODOS EN LA MISMA FILA. align-content CUANDO ESTÁN EN VARIAS FILAS*/
+  justify-content: space-between;
+  padding: 10px; /*ESPACIO INTERNO*/
+}
+
+nav > div {
+  font-size: 20px;
+}
+
+nav > div:hover {
+  color: rgb(0, 0, 0); /*CAMBIA DE COLOR AL ESTAR EL CURSOR ENCIMA*/
+}
+
+main {
+  grid-area: zm;
+  background-color: rgb(0, 0, 0);
+  color: rgb(194, 95, 95);
+  display: flex; /*flex PARA LOS DIVS HIJOS*/
+  flex-wrap: wrap; /*PERMITE QUE LOS ELEMENTOS PASEN A LA SIGUIENTE LINEA*/
+  justify-content: center; /*CENTRA HORIZONTALMENTE*/
+  align-items: center; /*CENTRA VERTICALMENTE*/
+  gap: 16px; /*ESPACIO ENTRE LOS ELEMENTOS*/
+}
+
+main > .texto {
+  width: 98%; /*OCUPA ESE % DEL ANCHO DE LA PÁGINA*/
+  height: 200px; /*ALTO FIJO*/
+  background-color: aliceblue;
+  color: rgb(194, 95, 95);
+  border: 1px solid black;
+  max-width: 350px; /*ANCHO MAXIMO PARA QUE NO SE AGRANDE DEMASIADO*/
+  box-shadow: 5px 5px 5px rgb(194, 95, 95); /*AÑADE UNA SOMBRA PARA DAR PROFUNDIDAD*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: 20px; /*TAMAÑO DEL TEXTO*/
+  text-shadow: 1px 1px 2px rgb(194, 95, 95); /*SOMBRA PARA EL TEXTO*/
+}
+
+aside {
+  grid-area: za; /*AREA DEL GRID PARA aside*/
+  display: none;
+  background-color: black;
+  flex-wrap: wrap; /*LOS DIV HIJOS PUEDEN IR  LA OTRA LINEA*/
+  justify-content: center; /*CENTRAR HORIZONTALMENTE*/
+  align-content: space-around; /*ESPACIO ALREDEDOR VERTICAL*/
+  gap: 16px; /*ESPACIO ENTRE ELEMENTOS*/
+  padding: 20px; /*ESPACIO INTERNO*/
+}
+
+aside > .anuncio {
+  width: 300px; /*ANCHO FIJO*/
+  height: 30%; /*ALTO RELATIVO*/
+  margin-bottom: 3px;
+  background-color: rgb(194, 95, 95);
+  color: aliceblue;
+  border: 1px solid rgb(194, 95, 95);
+  box-shadow: 5px 5px 5px aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  text-shadow: 1px 1px 2px black;
+}
+
+footer {
+  grid-area: zf;
+  background-color: black;
+  color: aliceblue;
+  font-size: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
+}
+
+/*MEDIAQUERY PARA PANTALLAS MAYORES DE 600PX*/
+
+@media screen and (min-width:600px){
+  main {
+    padding: 25px; /*ESPACIO EXTRA DENTRO main*/
+    gap: 30px; /*ESPACIO*/
+  }
+
+  main > .texto {
+    width: 48%; /*LOS DIVS OCUPAN CASI LA MITAD DEL CONTENEDOR*/
+  }
+}
+/*PARA PANTALLAS MAYORES A 1000PX*/
+
+@media screen and (min-width: 1000px) {
+  main {
+    justify-content: space-around; /*DISTRIBUCION CON ESPACIO ENTRE LOS ELEMENTOS*/
+    align-items: center; /*CENTRADO VERTICAL*/
+    gap: 25px;
+  }
+  main > .texto {
+    width: 30%;
+    height: 300px;
+  }
+}
+
+/*MEDIA QUERY PARA PANTALLAS MUY GRANDES (1400px)*/
+@media screen and (min-width: 1400px) {
+  main {
+    justify-content: space-around; /*DISTRIBUCION CON ESPACIO ENTRE LOS ELEMENTOS*/
+    align-items: center; /*CENTRADO VERTICAL*/
+    gap: 25px;
+  }
+  main > .texto {
+    width: 30%;
+    height: 300px;
+  }
+
+  body {
+    /*CAMBIOS loyaut PARA AGREGAR aside A LA DERECHA*/
+    grid-template-columns: 1fr 20%; /*DOS COLUMNAS: CONTENIDO PRINCIPAL + aside*/
+    grid-template-rows: 40px 40px 1fr 50px;
+    grid-template-areas:
+      "zh zh"
+      "zn zn"
+      "zm za"
+      "zf zf";
+  }
+  header > div > img {
+    max-height: 30px;
+    padding: 5px;
+  }
+  aside {
+    display: flex;
+  }
+}

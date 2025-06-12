@@ -1,0 +1,119 @@
+body {
+  /* FONDO CON IMAGEN */
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
+  background-size: cover; /*NO DUPLICA LA IMAGEN*/
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding: 20px; /*ESPACIADO INTERIOR DEL BODY*/
+}
+
+h1,
+h2,
+p {
+  text-align: center; /*CENTRA EL TEXTO EN EL CENTRO*/
+}
+
+/*ESTILO DEL CONTENEDOR PRINCIPAL*/
+
+.menu {
+  width: 80%; /*ocupa el 80% del ancho del dispositivo*/
+  background-color: burlywood;
+  margin-left: auto; /*SIRVE PARRA QUE SE CENTRO HORIZONTALMENTE*/
+  margin-right: auto; /*SIRVE PARA QUE SE CENTRE VERTICALEMENTE*/
+  padding: 20px; /*ESPACIO INTERIOR*/
+  max-width: 500px; /*ANCHO MAXIMO*/
+}
+
+.flavor,
+.dessert {
+  text-align: left; /*TEXTO ALINEADO A LA IZQUIERDA*/
+  width: 75%; /* 75% DEL ESPACIO HORIZONTAL */
+}
+
+/* ESTILOS PARA LOS PRECIOS */
+.price {
+  text-align: right; /* ALINEACION A LA DERCHA*/
+  width: 25%;
+}
+
+/* ESTILOS DE LOS PÁRRAFOS DE CADA ARTÍICULO */
+.item {
+    display: flex; 
+}
+
+.item p {
+  display: inline-block; /*ELEMENTOS EN LINEA*/
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+h1,
+h2 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+/*ESTILO DE TEXTO "est.2020"*/
+
+.encablished {
+  font-style: italic; /*CURSIVA*/
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+
+/*ESTILO Y SUPERFICIE DEL TITULO PRINCIPAL*/
+
+H1 {
+  font-size: 40px;
+}
+
+/* LINEA HORIZONTAL */
+
+hr {
+  height: 2px;
+  background-color: rgb(206, 156, 94);
+  border-color: rgb(206, 156, 94);
+}
+
+.bottom-line {
+  margin-top: 25px;
+}
+
+footer {
+  font-size: 14px;
+}
+/* ENLACES (ENESTADO NORMAL SON AZULES) */
+
+a {
+  color: black;
+}
+
+/* ENLACES VISITADOS */
+
+a:visited {
+  color: black;
+}
+
+/* ENLACES CUANDO PASA CON EL CURSOR */
+
+a:hover{
+    color: brown
+}
+
+/*ENLACE ACTIVO*/
+
+a:active{
+    color: brown;
+}
+
+a.adress{
+    margin-bottom: 5px;
+}
+
+img{
+    display: block; /*QUITAR ESPACIO EXTRA DE ABAJO*/
+    margin-right: auto; /*CENTRADO HORIZONTAL*/
+    margin-left: auto;
+    margin-top: -25px; /*SUBE LA IMAGEN UN POCO*/
+
+}

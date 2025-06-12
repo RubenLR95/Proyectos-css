@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url(https://img.freepik.com/free-vector/watercolor-blue-background_23-2149323831.jpg?semt=ais_hybrid&w=740);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: 50px auto; /*MARGEN SUPERIOR E INFERIOR DE 50PX, Y LOS MARGENES LATERALES AUTOMÁTICOS*/
+}
+
+.contact-box {
+  background: #fff;
+  display: flex; /*DISPOSOCIION DE LINEAS*/
+}
+
+.contact-left {
+  flex-basis: 50%; /*OCUPA EL 40% DEL ESPACIO DISPONIBLE DENTRO DEL contact-box*/
+  padding: 40px; /*RELLENO INTERNO UNIFORME DE 40PX*/
+  color: #000000;
+}
+.contact-right {
+  flex-basis: 50%;
+  padding: 40px;
+  background-color: #3d8d97;
+  color: white;
+}
+
+/*ESTILO GENERAL PARA TODOS LOS TITULOS <h1>*/
+
+h1 {
+  margin-bottom: 10px; /*SEPARACION INFERIOR 10 px*/
+}
+
+/*PARRAFOS DENTRO DE .container*/
+
+.container p {
+  margin-bottom: 40px; /*SEPARACION INFERIOR*/
+}
+
+.input-row {
+  display: flex;
+  justify-content: space-between; /* AÑADE SEPARACIONES IGUALES ENTRE ELEMENTOS*/
+  margin-bottom: 20px;
+}
+
+.input-row .input-group {
+  flex-flow: 45%; /* CADA GRUPO OCUPA EL 45% DEL ANCHO DE LA FILA */
+}
+
+/*ESTILO GENERICO PARA TODOS LOS input*/
+
+input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ccc; /* LINEA INFERIOR GRIS*/
+  outline: none; /* SIN CONTORNO AL ENFOCARLO */
+  padding-bottom: 5px; /* RELLENO INFERIOR DE 5px */
+}
+
+/* ESTILO PARA <textarea> */
+
+textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  outline: none;
+  box-sizing: border-box; /* INCLUYE border Y padding*/
+}
+
+/*ESTILO DE LA ETIQUETAS*/
+
+label {
+  margin-bottom: 6px;
+  display: block; /* SE MUESTRAN COMO BLOQUE PARA RESPETAR LAS IMAGENES*/
+  color: #3d8d97;
+}
+
+/* ESTILO DE LOS BOTONES*/
+
+button {
+  background: #3d8d97;
+  color: #ffffff;
+  margin-left: 40%;
+  border: none;
+  outline: none;
+  height: 35px;
+  border-radius: 30px;
+  margin-top: 30px;
+  width: 100px;
+  box-shadow: 0px 5px 15px 0px #1e454a;
+  cursor: pointer; /* PARA QUE EL CURSOR CAMBIE DE FLECHA A MANO AL COLOCARLO ENCIMA*/
+  transition: background 0.2s;
+  transition: color 0.2s;
+}
+
+button:hover {
+  color: #3d8d97;
+  background: #fff;
+}
+
+.contact-left h3 {
+  columns: #e41212; /*POSIBLE ERROR ORTOGRÁFICO. "COLUMNS" NO ES PROPIEDADVALIDA PARA EL COLOR*/
+  font-weight: 600; /* GROSOR DE LA FUENTE SEMINEGRITA */
+  margin-bottom: 30px;
+}
+
+tr td:first-child {
+  padding-right: 20px; /* ESPACIO A LA DERECHA PARA SEPARAR COLUMNAS */
+}
+
+tr td {
+  padding-top: 20px; /* ESPACIO ARRIBA DE 20PX PARA SEPARAR LAS FILAS*/
+}

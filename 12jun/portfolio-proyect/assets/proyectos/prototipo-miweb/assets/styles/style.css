@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Titillium Web", sans-serif;
+}
+
+/*SECCION PRINCIPAL DE LA PAGINA*/
+
+
+.hero {
+  width: 100%;
+  height: 100vh; /*ALTURA MINIMA IGUAL A LA ALTURA DE LA VENTANA*/
+  background-color: #000000;
+  background-image: url(/assets/images/logo.png); /*IMAGEN DE FONDO*/
+  background-position: center; /*CUBRE TODO EL CONTENEDOR CON TU IMAGEN*/
+  background-size: cover; /*CUBRE TODO EL CONTENEDOR, RECORTANDO EL FONDO SI ES NECEESARIO*/
+  padding: 10px 10px; /*ESPACIO INTERNO 10px ARRIBA Y ABAJO, Y 10px  A IZQ Y A DER*/
+  overflow: hidden; /*OCULTA CUALQUIER CONTENIDO QUE SOBRESALGA, MODIFICANDO SU POSICION SEGUN EL TAMAÑO DE LA VENTANA*/
+  position: relative; /* SIRVE COMO REFERENCIA PARA ELEMENTOS POSICIONADOS DENTRO*/
+}
+
+/* BARRA DE NAVEGACIÓN*/
+
+nav {
+  padding: 10px 0; /*ESPACIO ARRIBA Y ABAJO*/
+  display: flex; /*ACTIVA MODELO FLEX PARA ALINEAR ELEMENTOS*/
+  align-items: center; /*CENTRA VERTICALMENTE LOS HIJOS*/
+  justify-content: space-between; /*SEPARA LOS HIJOS AL MAXIMO A AMBOS EXTREMOS*/
+}
+
+/* LOGO DE NAV */
+
+.logo {
+  width: 140px; /*ANCHO FIJO DE 140px*/
+}
+
+/* ITEMS DE LA LISTA DE LA NAVEGACIÓN*/
+
+nav ul li {
+  display: inline-block; /*MUESTRA LOS <li> EN LISTA, COMO SI FUESEN BLOQUES*/
+  list-style: none; /*QUITA LOS PUNTOS DE LAS LISTAS*/
+  margin: 10px 15px; /*MARGENES ALREDEDOR DE CADA ITEM*/
+}
+
+/*ENLACES DENTRO DE LOS ITEMS*/
+
+nav ul li a{
+    text-decoration: none; /*ELIMINA EL SUBRAYADO Y TODA LA DECORACION POR DEFECTO DE LOS TEXTOS*/
+    color:black;
+    font-weight: 400; /*GROSOR DE LA LETRA (GROSOR DE LA NEGRITA)*/
+
+}
+
+/* BOTON DE LOGIN */
+
+.logn-btn{
+    text-decoration: none; 
+    color: #333; 
+    margin-right: 15px; /* PEQUEÑA SEPARACION A LA DERECHA */
+    font-weight: 400;
+
+}
+
+/* BOTONES PRINCIPALES (.btn) */
+
+.btn{
+    display: inline-block; /*BLOQUE EN LINEA*/
+    text-decoration: none;
+    padding: 14px 40px; /*RELLENO INTERNO VEETICAL Y HORIZONTAL*/
+    color: #fff;
+    background-image: linear-gradient(#12495e, #438199, #5ce4f9); /*DEGRADADO DIAGONAL*/
+    font-size: 14px;
+    border-radius: 30px;
+    border-top-right-radius: 0; /*ESQUINA SUPERIOR DERECHA SIN REDONDEO*/
+    transition: 0.5s ; /*TRANSICION SUAVE PARA CAMBIOS*/
+
+}
+
+ 
+ /* CONTENIDOR PRINCIPAL */
+.content{
+    margin-top: 10%; /* SEPARACIÓN RELATIVA AL CONTENEDOR PADRE */
+    max-width: 600px; /* ANCHO MÁXIMO DE 600px */
+}
+
+/* TITULO PRINCIPAL DENTRO DE .content */
+
+
+
+.content h1{
+    font-size: 40px;
+    color: #c1ebfa;
+
+}
+
+/*PARRAFO DESCRIPTIVO DE .content */
+
+.content p{
+    margin: 10px 0 30px; /*MARGENES: 1OPX ARRIBA, 0PX A LOS LADOS Y 30PX ABAJO*/
+    color:#a0f6ff;
+    animation-delay: 0.5s; /* RETRASO DE 0.5 SEGUNDOS DEL INICIO DE LA ANIMACION*/
+
+}
+
+.content .btn{
+    padding: 15px 80px; /*RELLENO PARA DESTACAR*/
+    font-size: 16px; 
+    animation-delay: 1s; /* RETRASO DE 1 SEGUNDO DEL INICIO DE LA ANIMACION */
+}
+
+/* EFECTO DE CAMBIO DE COLOR AL PASAR EL CURSOR POR EENCIMA*/
+
+.btn:hover{
+
+    border-top-right-radius: 30px; /* LA ESQUINA SUPERIOR DERECHA SE REDONDEA*/
+    background-image: linear-gradient( #5ce4f9,#438199, #12495e);
+}
+
+/* IMAGEN DESTACADA DENTRO DE .hero*/
+
+.feature-img{
+    width: 530px;
+    position: absolute; /* POSICIONAMIENTO ABSOLUTO RESPECTO A .hero*/
+    bottom: 0; /*PEGADO AL FONDO DEL CONTENEDOR .hero*/
+    right: 10%; /* SEPARADA UN 10% DEL BORDE DERECHO */
+
+}
+
+/* VARIANTE ANIMADA DE .feature-img */
+
+.feature .img .anim{
+    animation-delay: 1.5s;
+}
+
+.anim{
+    opacity: 0; /* EMPIEZA INVISIBLE */
+    transform: translateY(30px) ; /* DESPLAZADO 30px HACIA ABAJO */
+    animation: moveup 0.5s linear forwards; /* PARA EJECUTARLA ANIMACION */
+
+
+}
+
+/*DEFINICION DE LA ANIMACION MOVEUP */
+
+@keyframes moveup{
+    100%{
+        opacity: 1; /*TERMINA COMPLETAMENTE VISIBLE */
+        transform: translateY(0px);
+    }
+}
+

@@ -1,0 +1,57 @@
+/*PALETA COLORES GLOBALES DE LA WEB*/
+
+:root{
+    --lighting-color:  #7baca8; /* COLOR CLARO PRINCIPAL */
+    --dark-color: #5af1e482 ; /* TONO MEDIO DEL COLOR PRINCIPAL */
+    --darker-color: #5af1e415; /* TONO OSCURO DEL COLOR PRINCIPAL*/
+    --color-ocre: rgb(255, 190, 100); /* COLOR COMPLEMENTARIO PARA ACENTUAR*/
+    --color-ocre-medio: rgba(201, 132, 47, 0.837);
+    --color-ocre-oscuro: rgb(108, 67, 34);
+    --colo-fav: #5af1e5;
+    --color-fav2: rgb(255, 196, 0);
+    --color-black: #000;
+    --color-white: #fff;
+}
+
+
+/* APLICA A TODOS LOS ELEMENTOS */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit' sans-serif;
+}
+
+/* AJUSTE BASE DEL TAMAÑO DE FUENTA DE HTML*/
+html{
+    font-size: 62,5%; 
+}
+
+/*ESTILOS COMUNES A body Y html */
+
+body,html{
+    font-weight: 300; /*GROSOR DE FUENTE LIGERO*/
+    line-height: 1.4; /*ESPACIO VERTICAL ENTRE LINEAS PARA MEJORAR LA LECTURA*/
+    scroll-behavior: smooth; /* SCROLL SUAVE PARA ENLACES INTERNOS */
+    color: var(--dark-color);
+    background-image: "";
+
+}
+
+body{
+    font-size: 1,4rem; /*TAMAÑO DE TEXTO BASE: 14px */
+
+}
+
+/* CONTENEDOR CENTRALIZADO */
+
+.container{
+    max-width: 1400px; /*ANCHO MÁXIMO DEL CONTENEDOR*/
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+    color: white; /*COLOR DE ENLACE BLANCO */
+}
